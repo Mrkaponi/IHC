@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link href="boostrap5/css/bootstrap.css" type="text/css" rel="stylesheet">
+    <link href="css/main-css/main.css" type="text/css" rel="stylesheet">
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Renta de Autos</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Reservaciones</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Acerca de</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<div class="container ">
+    <div>
+        <h1>Autos Disponibles</h1>
+        <div style="margin-top: 50px" id="car-container" class="shadow"></div>
+
+    </div>
+    <div class="container">
+        <button id="prev-btn" class="btn btn-primary">&lt;</button>
+        <button id="next-btn"  class="btn btn-primary">&gt;</button>
+
+        <a href="autoslist.html" class="btn btn-primary" > lista completa de autos</a>
+    </div>
+
+</div>
+
+<section class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+            <h2 class="mb-4">¿Cómo funciona?</h2>
+            <p class="lead mb-5">En nuestra plataforma ofrecemos diferentes opciones para que puedas comprar, vender o rentar tu carro de manera fácil y segura.</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 text-center mb-5 shadow">
+            <i class="fas fa-handshake fa-4x mb-4"></i>
+            <h4>Compra de carros</h4>
+            <p>Ofrecemos una amplia variedad de carros nuevos y usados a precios competitivos. Nuestro equipo de expertos te ayudará en todo el proceso de compra.</p>
+        </div>
+
+        <div class="col-md-4 text-center mb-5 shadow">
+            <i class="fas fa-dollar-sign fa-4x mb-4"></i>
+            <h4>Venta de carros</h4>
+            <p>Si estás interesado en vender tu carro, te ofrecemos una plataforma en línea para que puedas publicar tu anuncio y llegar a más compradores potenciales.</p>
+        </div>
+
+        <div class="col-md-4 text-center mb-5 shadow">
+            <i class="fas fa-car fa-4x mb-4"></i>
+            <h4>Renta de carros</h4>
+            <p>También ofrecemos la opción de rentar un carro por días, semanas o meses. Con nuestros precios competitivos y opciones de pago flexibles, puedes disfrutar de un carro sin preocupaciones.</p>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+            <a href="/cotizacion" class="btn btn-primary btn-lg mt-5">¡Cotiza ahora!</a>
+        </div>
+    </div>
+</section>
+
+
+</body>
+<script src="boostrap5/js/bootstrap.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    let cars = [
+        {make: "Toyota", model: "Corolla", year: 2021, price: 200},
+        {make: "Honda", model: "Civic", year: 2020, price: 250},
+        {make: "Ford", model: "Mustang", year: 2019, price: 300},
+        {make: "Tesla", model: "Model S", year: 2021, price: 400},
+        {make: "Chevrolet", model: "Camaro", year: 2020, price: 350},
+        {make: "BMW", model: "M3", year: 2021, price: 450},
+        {make: "Mercedes-Benz", model: "E-Class", year: 2020, price: 500},
+        {make: "Audi", model: "A4", year: 2019, price: 275}
+    ];
+
+    function showCars(startIndex) {
+        let carContainer = document.getElementById("car-container");
+        carContainer.innerHTML = "";
+
+        for (let i = startIndex; i < startIndex + 3 && i < cars.length; i++) {
+            let car = cars[i];
+
+            let carHTML = `
+      <div class=" car-card">
+        <h3>${car.make} ${car.model}</h3>
+        <p>Year: ${car.year}</p>
+        <p>Price: $${car.price}</p>
+      </div>
+    `;
+
+            carContainer.innerHTML += carHTML;
+        }
+    }
+
+    let currentIndex = 0;
+
+    showCars(currentIndex);
+
+    let prevBtn = document.getElementById("prev-btn");
+    prevBtn.addEventListener("click", () => {
+        if (currentIndex > 0) {
+            currentIndex -= 3;
+            showCars(currentIndex);
+        }
+    });
+
+    let nextBtn = document.getElementById("next-btn");
+    nextBtn.addEventListener("click", () => {
+        if (currentIndex < cars.length - 3) {
+            currentIndex += 3;
+            showCars(currentIndex);
+        }
+    });
+
+
+</script>
+</html>

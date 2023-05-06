@@ -1,0 +1,17 @@
+
+.container {
+    margin-top: 30px;
+}
+.car-card {
+    display: inline-block;
+    width: 30%;
+    margin: 10px;
+    text-align: center;
+
+
+}
+
+.car-card {
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
