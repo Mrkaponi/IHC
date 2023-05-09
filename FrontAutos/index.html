@@ -7,10 +7,14 @@
     <link href="boostrap5/css/bootstrap.css" type="text/css" rel="stylesheet">
     <link href="css/main-css/main.css" type="text/css" rel="stylesheet">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;600;800&display=swap" rel="stylesheet">
+
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-danger p-3">
-    <a class="navbar-brand" href="#">Renta de Autos</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-primary p-3">
+    <a class="logo navbar-brand" href="#">Renta de Autos</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -54,7 +58,7 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row p-3">
         <div class="col-md-4 text-center mb-5 shadow">
             <i class="fas fa-handshake fa-4x mb-4"></i>
             <h4>Compra de carros</h4>
@@ -76,7 +80,7 @@
 
     <div class="row justify-content-center">
         <div class="col-md-8 text-center">
-            <a href="/cotizacion" class="btn btn-primary btn-lg mt-5">¡Cotiza ahora!</a>
+            <a href="/cotizacion" class="btn btn-primary btn-lg cta">¡Cotiza ahora!</a>
         </div>
     </div>
 </section>
@@ -108,9 +112,9 @@
 
             let carHTML = `
       <div class=" car-card col-md">
-        <h3>${car.make} ${car.model}</h3>
-        <p>Year: ${car.year}</p>
-        <p>Price: $${car.price}</p>
+        <h3 class="bold">${car.make} ${car.model}</h3>
+        <p>Year: <span class="bold">${car.year}</span></p>
+        <p>Price: <span class="bold">$${car.price}</span></p>
       </div>
     `;
 
