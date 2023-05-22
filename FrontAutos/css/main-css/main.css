@@ -17,12 +17,12 @@ body {
 h1 {
     text-align: center;
     margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
 }
 
-/* .container {
-    margin-top: 30px;
-} */
-
+h3 {
+  font-size: 1rem;
+}
 
 .car-card {
     display: block;
@@ -31,9 +31,10 @@ h1 {
 
 }
 
-/* .car-card {
-    padding: 1rem;
-} */
+.card--size {
+  width: 226.67px;
+  width: 294.81px;
+}
 
 .cta {
     margin-bottom: 2rem;

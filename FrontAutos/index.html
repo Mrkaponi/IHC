@@ -43,10 +43,10 @@
       </div>
     </nav>
 
-    <div class="p-3"> <!--container-->
+    <div class="p-3">
       <h1>Autos Disponibles</h1>
-      <div class="container g-3">
-        <div id="car-container" class="shadow row"></div>
+      <div class="container">
+        <div id="car-container" class="shadow row p-3 justify-content-center align-items-center "></div>
       </div>
       <div class="container">
         <button id="prev-btn" class="btn btn-primary">&lt;</button>
@@ -134,8 +134,8 @@
         let car = cars[i];
 
         let carHTML = `
-        <div class="col-12 col-md-6 col-lg-4">
-            <div class="card">
+        <div class="col-12 col-md-4 p-2 d-flex justify-content-center">
+            <div class="card card--size">
                 <img class="card-img-top" src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="auto">
                 <div class=" car-card card-body">
                     <h3 class="bold">${car.make} ${car.model}</h3>
