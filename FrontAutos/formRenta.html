@@ -76,6 +76,20 @@
                   Detalles del automóvil
                 </button>
               </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="pills-pago-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#pills-pago"
+                  type="button"
+                  role="tab"
+                  aria-controls="pills-pago"
+                  aria-selected="false"
+                >
+                  Pago
+                </button>
+              </li>
             </ul>
 
             <div class="tab-content w-75 max-width-sm" id="pills-tabContent">
@@ -108,7 +122,7 @@
                 />
                 <!-- Botón "Next" -->
                 <button
-                type="button"
+                  type="button"
                   class="btn btn-primary mt-3"
                   onclick="mostrarDetalles()"
                 >
@@ -129,7 +143,7 @@
                   class="form-control mb-3"
                   id="marca"
                   name="marca"
-                  placeholder="BWM"
+                  placeholder="BMW"
                   required
                 />
 
@@ -142,11 +156,54 @@
                   placeholder="2020"
                   required
                 />
-                <!-- Botón "Prev" y "Submit" -->
+                <!-- Botón "Prev" y "Next" -->
                 <button
-                type="button"
+                  type="button"
                   class="btn btn-secondary mt-3"
                   onclick="mostrarComprador()"
+                >
+                  Anterior
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary mt-3"
+                  onclick="mostrarPago()"
+                >
+                  Siguiente
+                </button>
+              </div>
+
+              <div
+                class="tab-pane fade"
+                id="pills-pago"
+                role="tabpanel"
+                aria-labelledby="pills-pago-tab"
+              >
+                <!-- Inputs de pago aquí -->
+                <label for="tarjeta" class="form-label">Tarjeta de crédito:</label>
+                <input
+                  type="text"
+                  class="form-control mb-3"
+                  id="tarjeta"
+                  name="tarjeta"
+                  placeholder="1234 5678 9012 3456"
+                  required
+                />
+
+                <label for="fecha" class="form-label">Fecha de vencimiento:</label>
+                <input
+                  type="text"
+                  class="form-control mb-3"
+                  id="fecha"
+                  name="fecha"
+                  placeholder="MM/AA"
+                  required
+                />
+                <!-- Botón "Prev" y "Submit" -->
+                <button
+                  type="button"
+                  class="btn btn-secondary mt-3"
+                  onclick="mostrarDetalles()"
                 >
                   Anterior
                 </button>
@@ -163,26 +220,50 @@
     <script>
       const compradorTab = document.getElementById("pills-comprador-tab");
       const detallesTab = document.getElementById("pills-detalles-tab");
+      const pagoTab = document.getElementById("pills-pago-tab");
 
       function mostrarDetalles() {
         compradorTab.classList.remove("active");
         detallesTab.classList.add("active");
+        pagoTab.classList.remove("active");
         document
           .getElementById("pills-comprador")
           .classList.remove("show", "active");
         document
           .getElementById("pills-detalles")
           .classList.add("show", "active");
+        document
+          .getElementById("pills-pago")
+          .classList.remove("show", "active");
       }
 
       function mostrarComprador() {
-        detallesTab.classList.remove("active");
         compradorTab.classList.add("active");
+        detallesTab.classList.remove("active");
+        pagoTab.classList.remove("active");
+        document
+          .getElementById("pills-comprador")
+          .classList.add("show", "active");
         document
           .getElementById("pills-detalles")
           .classList.remove("show", "active");
         document
+          .getElementById("pills-pago")
+          .classList.remove("show", "active");
+      }
+
+      function mostrarPago() {
+        compradorTab.classList.remove("active");
+        detallesTab.classList.remove("active");
+        pagoTab.classList.add("active");
+        document
           .getElementById("pills-comprador")
+          .classList.remove("show", "active");
+        document
+          .getElementById("pills-detalles")
+          .classList.remove("show", "active");
+        document
+          .getElementById("pills-pago")
           .classList.add("show", "active");
       }
     </script>
