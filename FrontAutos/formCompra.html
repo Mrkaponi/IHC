@@ -7,38 +7,38 @@
     <link href="boostrap5/css/bootstrap.css" type="text/css" rel="stylesheet" />
     <link href="css/main-css/main.css" type="text/css" rel="stylesheet" />
     <title>Document</title>
-    <link rel="stylesheet" href="./css/form/forms.css">
+    <link rel="stylesheet" href="./css/form/forms.css" />
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark p-3 navbar-form">
       <div class="container">
-            <a class="navbar-brand" href="index.html">Renta de Autos</a>
-            <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNav"
-              aria-controls="navbarNav"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav ms-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">Inicio</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Reservaciones</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Acerca de</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-  </nav>
+        <a class="navbar-brand" href="index.html">Renta de Autos</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Reservaciones</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Acerca de</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
     <div class="container">
       <div class="row justify-content-center">
@@ -87,7 +87,12 @@
               <!-- Inputs del comprador aquí -->
 
               <label for="nombre" class="form-label">Nombre:</label>
-              <input type="text" class="form-control mb-3" id="nombre" placeholder="Sebastian Herrera" />
+              <input
+                type="text"
+                class="form-control mb-3"
+                id="nombre"
+                placeholder="Sebastian Herrera"
+              />
 
               <label for="email" class="form-label">Email:</label>
               <input
@@ -110,12 +115,25 @@
             >
               <!-- Inputs de detalles del automóvil aquí -->
               <label for="marca" class="form-label">Marca:</label>
-              <input type="text" class="form-control mb-3" id="marca" placeholder="BWM" />
+              <input
+                type="text"
+                class="form-control mb-3"
+                id="marca"
+                placeholder="BWM"
+              />
 
-              <label for="modelo" class="form-label">Modelo:</label>  
-              <input type="text" class="form-control mb-3" id="modelo" placeholder="2020" />
+              <label for="modelo" class="form-label">Modelo:</label>
+              <input
+                type="text"
+                class="form-control mb-3"
+                id="modelo"
+                placeholder="2020"
+              />
               <!-- Botón "Prev" y "Submit" -->
-              <button class="btn btn-secondary mt-3" onclick="mostrarComprador()">
+              <button
+                class="btn btn-secondary mt-3"
+                onclick="mostrarComprador()"
+              >
                 Anterior
               </button>
               <button class="btn btn-primary mt-3" type="submit">Enviar</button>
