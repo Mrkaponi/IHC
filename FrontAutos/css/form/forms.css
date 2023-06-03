@@ -22,6 +22,12 @@ body::before {
   color: #ffffff;
 }
 
+.navbar-form {
+    position: absolute;
+    right: 0;
+    left: 0;
+}
+
 .max--width {
   max-width: 336px;
 }
