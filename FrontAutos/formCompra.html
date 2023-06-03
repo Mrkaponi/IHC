@@ -7,6 +7,7 @@
     <link href="boostrap5/css/bootstrap.css" type="text/css" rel="stylesheet" />
     <link href="css/main-css/main.css" type="text/css" rel="stylesheet" />
     <title>Document</title>
+    <link rel="stylesheet" href="./css/form/forms.css">
   </head>
   <body>
     <div class="container">
@@ -56,7 +57,7 @@
               <!-- Inputs del comprador aquí -->
 
               <label for="nombre" class="form-label">Nombre:</label>
-              <input type="text" class="form-control mb-3" placeholder="Sebastian Herrera" />
+              <input type="text" class="form-control mb-3" id="nombre" placeholder="Sebastian Herrera" />
 
               <label for="email" class="form-label">Email:</label>
               <input
@@ -66,7 +67,7 @@
                 id="email"
               />
               <!-- Botón "Next" -->
-              <button class="btn btn-primary" onclick="mostrarDetalles()">
+              <button class="btn btn-primary mt-3" onclick="mostrarDetalles()">
                 Siguiente
               </button>
             </div>
@@ -84,10 +85,10 @@
               <label for="modelo" class="form-label">Modelo:</label>  
               <input type="text" class="form-control mb-3" id="modelo" placeholder="2020" />
               <!-- Botón "Prev" y "Submit" -->
-              <button class="btn btn-secondary" onclick="mostrarComprador()">
+              <button class="btn btn-secondary mt-3" onclick="mostrarComprador()">
                 Anterior
               </button>
-              <button class="btn btn-primary" type="submit">Enviar</button>
+              <button class="btn btn-primary mt-3" type="submit">Enviar</button>
             </div>
           </div>
         </div>

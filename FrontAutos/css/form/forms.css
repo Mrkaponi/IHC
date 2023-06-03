@@ -1,3 +1,26 @@
-.max--width{
-    max-width: 336px;
+body {
+  background-image: url("../../carform.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  color: #ffffff;
+}
+
+.max--width {
+  max-width: 336px;
 }
