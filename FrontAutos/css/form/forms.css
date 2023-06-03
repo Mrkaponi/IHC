@@ -23,6 +23,7 @@ body::before {
 }
 
 .navbar-form {
+    z-index: 2;
     position: absolute;
     right: 0;
     left: 0;

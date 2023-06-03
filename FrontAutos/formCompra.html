@@ -12,7 +12,7 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark p-3 navbar-form">
       <div class="container">
-        <a class="navbar-brand" href="index.html">Renta de Autos</a>
+        <a class="navbar-brand" href="./index.html">Compra de Autos</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -46,99 +46,116 @@
           class="col-auto col-md-6 d-flex flex-column align-items-start justify-content-center"
           style="min-height: 100vh"
         >
-          <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-            <li class="nav-item" role="presentation">
-              <button
-                class="nav-link active"
-                id="pills-comprador-tab"
-                data-bs-toggle="pill"
-                data-bs-target="#pills-comprador"
-                type="button"
-                role="tab"
-                aria-controls="pills-comprador"
-                aria-selected="true"
+          <form id="formulario">
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link active"
+                  id="pills-comprador-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#pills-comprador"
+                  type="button"
+                  role="tab"
+                  aria-controls="pills-comprador"
+                  aria-selected="true"
+                >
+                  Comprador
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="pills-detalles-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#pills-detalles"
+                  type="button"
+                  role="tab"
+                  aria-controls="pills-detalles"
+                  aria-selected="false"
+                >
+                  Detalles del automóvil
+                </button>
+              </li>
+            </ul>
+
+            <div class="tab-content w-75 max-width-sm" id="pills-tabContent">
+              <div
+                class="tab-pane fade show active"
+                id="pills-comprador"
+                role="tabpanel"
+                aria-labelledby="pills-comprador-tab"
               >
-                Comprador
-              </button>
-            </li>
-            <li class="nav-item" role="presentation">
-              <button
-                class="nav-link"
-                id="pills-detalles-tab"
-                data-bs-toggle="pill"
-                data-bs-target="#pills-detalles"
-                type="button"
-                role="tab"
-                aria-controls="pills-detalles"
-                aria-selected="false"
+                <!-- Inputs del comprador aquí -->
+
+                <label for="nombre" class="form-label">Nombre:</label>
+                <input
+                  type="text"
+                  class="form-control mb-3"
+                  id="nombre"
+                  name="nombre"
+                  placeholder="Sebastian Herrera"
+                  required
+                />
+
+                <label for="email" class="form-label">Email:</label>
+                <input
+                  type="email"
+                  class="form-control mb-3"
+                  placeholder="messi_gignac@bicho.com"
+                  id="email"
+                  name="email"
+                  required
+                />
+                <!-- Botón "Next" -->
+                <button
+                  type="button"
+                  class="btn btn-primary mt-3"
+                  onclick="mostrarDetalles()"
+                >
+                  Siguiente
+                </button>
+              </div>
+
+              <div
+                class="tab-pane fade"
+                id="pills-detalles"
+                role="tabpanel"
+                aria-labelledby="pills-detalles-tab"
               >
-                Detalles del automóvil
-              </button>
-            </li>
-          </ul>
+                <!-- Inputs de detalles del automóvil aquí -->
+                <label for="marca" class="form-label">Marca:</label>
+                <input
+                  type="text"
+                  class="form-control mb-3"
+                  id="marca"
+                  name="marca"
+                  placeholder="BWM"
+                  required
+                />
 
-          <div class="tab-content w-75 max-width-sm" id="pills-tabContent">
-            <div
-              class="tab-pane fade show active"
-              id="pills-comprador"
-              role="tabpanel"
-              aria-labelledby="pills-comprador-tab"
-            >
-              <!-- Inputs del comprador aquí -->
-
-              <label for="nombre" class="form-label">Nombre:</label>
-              <input
-                type="text"
-                class="form-control mb-3"
-                id="nombre"
-                placeholder="Sebastian Herrera"
-              />
-
-              <label for="email" class="form-label">Email:</label>
-              <input
-                type="email"
-                class="form-control mb-3"
-                placeholder="messi_gignac@bicho.com"
-                id="email"
-              />
-              <!-- Botón "Next" -->
-              <button class="btn btn-primary mt-3" onclick="mostrarDetalles()">
-                Siguiente
-              </button>
+                <label for="modelo" class="form-label">Modelo:</label>
+                <input
+                  type="text"
+                  class="form-control mb-3"
+                  id="modelo"
+                  name="modelo"
+                  placeholder="2020"
+                  required
+                />
+                <!-- Botón "Prev" y "Submit" -->
+                <button
+                  type="button"
+                  class="btn btn-secondary mt-3"
+                  onclick="mostrarComprador()"
+                >
+                  Anterior
+                </button>
+                <button class="btn btn-primary mt-3" type="submit">
+                  Enviar
+                </button>
+              </div>
             </div>
-
-            <div
-              class="tab-pane fade"
-              id="pills-detalles"
-              role="tabpanel"
-              aria-labelledby="pills-detalles-tab"
-            >
-              <!-- Inputs de detalles del automóvil aquí -->
-              <label for="marca" class="form-label">Marca:</label>
-              <input
-                type="text"
-                class="form-control mb-3"
-                id="marca"
-                placeholder="BWM"
-              />
-
-              <label for="modelo" class="form-label">Modelo:</label>
-              <input
-                type="text"
-                class="form-control mb-3"
-                id="modelo"
-                placeholder="2020"
-              />
-              <!-- Botón "Prev" y "Submit" -->
-              <button
-                class="btn btn-secondary mt-3"
-                onclick="mostrarComprador()"
-              >
-                Anterior
-              </button>
-              <button class="btn btn-primary mt-3" type="submit">Enviar</button>
-            </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>
