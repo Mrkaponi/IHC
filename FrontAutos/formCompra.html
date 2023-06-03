@@ -1,13 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="boostrap5/css/bootstrap.css" type="text/css" rel="stylesheet" />
-</head>
-<body>
-    
-</body>
+    <link href="css/main-css/main.css" type="text/css" rel="stylesheet" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div
+          class="col-auto col-md-6 d-flex flex-column align-items-start justify-content-center"
+          style="min-height: 100vh"
+        >
+          <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link active"
+                id="pills-comprador-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#pills-comprador"
+                type="button"
+                role="tab"
+                aria-controls="pills-comprador"
+                aria-selected="true"
+              >
+                Comprador
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="pills-detalles-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#pills-detalles"
+                type="button"
+                role="tab"
+                aria-controls="pills-detalles"
+                aria-selected="false"
+              >
+                Detalles del automóvil
+              </button>
+            </li>
+          </ul>
+
+          <div class="tab-content w-75 max-width-sm" id="pills-tabContent">
+            <div
+              class="tab-pane fade show active"
+              id="pills-comprador"
+              role="tabpanel"
+              aria-labelledby="pills-comprador-tab"
+            >
+              <!-- Inputs del comprador aquí -->
+
+              <label for="nombre" class="form-label">Nombre:</label>
+              <input type="text" class="form-control mb-3" placeholder="Sebastian Herrera" />
+
+              <label for="email" class="form-label">Email:</label>
+              <input
+                type="email"
+                class="form-control mb-3"
+                placeholder="messi_gignac@bicho.com"
+                id="email"
+              />
+              <!-- Botón "Next" -->
+              <button class="btn btn-primary" onclick="mostrarDetalles()">
+                Siguiente
+              </button>
+            </div>
+
+            <div
+              class="tab-pane fade"
+              id="pills-detalles"
+              role="tabpanel"
+              aria-labelledby="pills-detalles-tab"
+            >
+              <!-- Inputs de detalles del automóvil aquí -->
+              <label for="marca" class="form-label">Marca:</label>
+              <input type="text" class="form-control mb-3" id="marca" placeholder="BWM" />
+
+              <label for="modelo" class="form-label">Modelo:</label>  
+              <input type="text" class="form-control mb-3" id="modelo" placeholder="2020" />
+              <!-- Botón "Prev" y "Submit" -->
+              <button class="btn btn-secondary" onclick="mostrarComprador()">
+                Anterior
+              </button>
+              <button class="btn btn-primary" type="submit">Enviar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const compradorTab = document.getElementById("pills-comprador-tab");
+      const detallesTab = document.getElementById("pills-detalles-tab");
+
+      function mostrarDetalles() {
+        compradorTab.classList.remove("active");
+        detallesTab.classList.add("active");
+        document
+          .getElementById("pills-comprador")
+          .classList.remove("show", "active");
+        document
+          .getElementById("pills-detalles")
+          .classList.add("show", "active");
+      }
+
+      function mostrarComprador() {
+        detallesTab.classList.remove("active");
+        compradorTab.classList.add("active");
+        document
+          .getElementById("pills-detalles")
+          .classList.remove("show", "active");
+        document
+          .getElementById("pills-comprador")
+          .classList.add("show", "active");
+      }
+    </script>
+  </body>
 </html>
