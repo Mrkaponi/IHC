@@ -1,5 +1,7 @@
 body {
     font-family: 'Anek Bangla', sans-serif;
+    background: linear-gradient(to bottom, #1a1a1a, #333333);
+    color: #ffffff;
 }
 
 a {
