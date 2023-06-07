@@ -8,6 +8,13 @@ a {
     text-decoration: none;
 }
 
+.opciones {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .bold {
     font-weight: 600;
 }
