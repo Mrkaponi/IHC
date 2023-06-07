@@ -46,119 +46,120 @@
           class="col-auto col-md-6 d-flex flex-column align-items-start justify-content-center"
           style="min-height: 100vh"
         >
-          <form id="formulario">
-            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-              <li class="nav-item" role="presentation">
-                <button
-                  class="nav-link active"
-                  id="pills-comprador-tab"
-                  data-bs-toggle="pill"
-                  data-bs-target="#pills-comprador"
-                  type="button"
-                  role="tab"
-                  aria-controls="pills-comprador"
-                  aria-selected="true"
-                >
-                  Comprador
-                </button>
-              </li>
-              <li class="nav-item" role="presentation">
-                <button
-                  class="nav-link"
-                  id="pills-detalles-tab"
-                  data-bs-toggle="pill"
-                  data-bs-target="#pills-detalles"
-                  type="button"
-                  role="tab"
-                  aria-controls="pills-detalles"
-                  aria-selected="false"
-                >
-                  Detalles del automóvil
-                </button>
-              </li>
-            </ul>
-
-            <div class="tab-content w-75 max-width-sm" id="pills-tabContent">
-              <div
-                class="tab-pane fade show active"
-                id="pills-comprador"
-                role="tabpanel"
-                aria-labelledby="pills-comprador-tab"
+        <form id="formulario">
+          <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link active"
+                id="pills-comprador-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#pills-comprador"
+                type="button"
+                role="tab"
+                aria-controls="pills-comprador"
+                aria-selected="true"
               >
-                <!-- Inputs del comprador aquí -->
-
-                <label for="nombre" class="form-label">Nombre:</label>
-                <input
-                  type="text"
-                  class="form-control mb-3"
-                  id="nombre"
-                  name="nombre"
-                  placeholder="Sebastian Herrera"
-                  required
-                />
-
-                <label for="email" class="form-label">Email:</label>
-                <input
-                  type="email"
-                  class="form-control mb-3"
-                  placeholder="messi_gignac@bicho.com"
-                  id="email"
-                  name="email"
-                  required
-                />
-                <!-- Botón "Next" -->
-                <button
-                  type="button"
-                  class="btn btn-primary mt-3"
-                  onclick="mostrarDetalles()"
-                >
-                  Siguiente
-                </button>
-              </div>
-
-              <div
-                class="tab-pane fade"
-                id="pills-detalles"
-                role="tabpanel"
-                aria-labelledby="pills-detalles-tab"
+                Comprador
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="pills-detalles-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#pills-detalles"
+                type="button"
+                role="tab"
+                aria-controls="pills-detalles"
+                aria-selected="false"
               >
-                <!-- Inputs de detalles del automóvil aquí -->
-                <label for="marca" class="form-label">Marca:</label>
-                <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Seleccione Marca
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">BMW</a>
-                    <a class="dropdown-item" href="#">Toyota</a>
-                    <a class="dropdown-item" href="#">Honda</a>
-                  </div>
-                </div><br>
-
-                <label for="modelo" class="form-label">Modelo:</label>
-                <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownModelButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Seleccione Modelo
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">2022</a>
-                    <a class="dropdown-item" href="#">2021</a>
-                    <a class="dropdown-item" href="#">2020</a>
-                  </div>
-                </div><br>
-                <!-- Botón "Prev" y "Submit" -->
-                <button
-                  type="button"
-                  class="btn btn-secondary mt-3"
-                  onclick="mostrarComprador()"
-                >
-                  Anterior
-                </button>
-                <a href="index.html" class="btn btn-primary" style="margin-top: 16px;">
-                  Enviar</a>
-              </div>
+                Detalles del automóvil
+              </button>
+            </li>
+          </ul>
+        
+          <div class="tab-content w-75 max-width-sm" id="pills-tabContent">
+            <div
+              class="tab-pane fade show active"
+              id="pills-comprador"
+              role="tabpanel"
+              aria-labelledby="pills-comprador-tab"
+            >
+              <!-- Inputs del comprador aquí -->
+        
+              <label for="nombre" class="form-label">Nombre:</label>
+              <input
+                type="text"
+                class="form-control mb-3"
+                id="nombre"
+                name="nombre"
+                placeholder="Sebastian Herrera"
+                required
+              />
+        
+              <label for="email" class="form-label">Email:</label>
+              <input
+                type="email"
+                class="form-control mb-3"
+                placeholder="messi_gignac@bicho.com"
+                id="email"
+                name="email"
+                required
+              />
+              <!-- Botón "Next" -->
+              <button
+                type="button"
+                class="btn btn-primary mt-3"
+                onclick="mostrarDetalles()"
+              >
+                Siguiente
+              </button>
             </div>
-          </form>
+        
+            <div
+              class="tab-pane fade"
+              id="pills-detalles"
+              role="tabpanel"
+              aria-labelledby="pills-detalles-tab"
+            >
+              <!-- Inputs de detalles del automóvil aquí -->
+              <label for="marca" class="form-label">Marca:</label>
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Seleccione Marca
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#">BMW</a>
+                  <a class="dropdown-item" href="#">Toyota</a>
+                  <a class="dropdown-item" href="#">Honda</a>
+                </div>
+              </div><br>
+        
+              <label for="modelo" class="form-label">Modelo:</label>
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownModelButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Seleccione Modelo
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownModelButton">
+                  <a class="dropdown-item" href="#">2022</a>
+                  <a class="dropdown-item" href="#">2021</a>
+                  <a class="dropdown-item" href="#">2020</a>
+                </div>
+              </div><br>
+              <!-- Botón "Prev" y "Submit" -->
+              <button
+                type="button"
+                class="btn btn-secondary mt-3"
+                onclick="mostrarComprador()"
+              >
+                Anterior
+              </button>
+              <a href="index.html" class="btn btn-primary" style="margin-top: 16px;">
+                Enviar</a>
+            </div>
+          </div>
+        </form>
+        
         </div>
       </div>
     </div>
