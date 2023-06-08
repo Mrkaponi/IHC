@@ -1,0 +1,22 @@
+* {
+    font-family: 'Anek Bangla', sans-serif;
+    font-size: 18px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.801)), url('../../carContacto.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+  }
+
+.spacing {
+    letter-spacing: 1px;
+}
+
+.container-background {
+    background-color: rgba(0, 0, 0, 0.5);
+}
