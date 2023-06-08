@@ -20,3 +20,9 @@ body {
 .container-background {
     background-color: rgba(0, 0, 0, 0.5);
 }
+
+.navbar-form {
+    position: absolute;
+    right: 0;
+    left: 0;
+}
