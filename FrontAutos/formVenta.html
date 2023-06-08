@@ -120,6 +120,15 @@
                   name="email"
                   required
                 />
+                <label for="numero" class="form-label">numero:</label>
+                <input
+                  type="number"
+                  class="form-control mb-3"
+                  placeholder="81737465829"
+                  id="numero"
+                  name="numero"
+                  required
+                />
                 <!-- Botón "Next" -->
                 <button
                   type="button"
@@ -217,7 +226,7 @@
                 >
                   Anterior
                 </button>
-                <button type="submit" class="btn btn-primary mt-3">
+                <button type="button" onclick="enviarFormulario()" class="btn btn-primary mt-3">
                   Enviar
                 </button>
               </div>
@@ -227,6 +236,55 @@
       </div>
     </div>
 
+    <script>
+      function enviarFormulario() {
+        // Obtener los valores de los campos del formulario
+        var nombre = document.getElementById("nombre").value;
+        var email = document.getElementById("email").value;
+        var numero = document.getElementById("numero").value;
+        var marca = document.getElementById("marca").value;
+        var modelo = document.getElementById("modelo").value;
+        var tarjeta = document.getElementById("tarjeta").value;
+        var fecha = document.getElementById("fecha").value;
+    
+        // Crear el objeto de datos a enviar
+        var data = {
+          name: nombre,
+          email: email,
+          phone: numero,
+          marca: marca,
+          modelo: modelo,
+          tarjetacredito: tarjeta,
+          fechavencimiento: fecha
+        };
+    
+        // Realizar la solicitud HTTP POST
+        fetch("http://localhost:8080/api/autos/venta/save/venta", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(data)
+        })
+          .then(response => {
+            if (response.ok) {
+              // La solicitud fue exitosa
+              alert("Formulario enviado correctamente");
+              // Restablecer el formulario
+              document.getElementById("formulario").reset();
+            } else {
+              // La solicitud no fue exitosa
+              alert("Error al enviar el formulario");
+            }
+          })
+          .catch(error => {
+            // Error en la solicitud
+            console.error("Error en la solicitud:", error);
+            alert("Error en la solicitud");
+          });
+      }
+    </script>
+    
     <script>
       const compradorTab = document.getElementById("pills-comprador-tab");
       const detallesTab = document.getElementById("pills-detalles-tab");

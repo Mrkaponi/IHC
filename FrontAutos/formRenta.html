@@ -131,29 +131,23 @@
                 aria-labelledby="pills-detalles-tab"
               >
                 <!-- Inputs de detalles del automóvil aquí -->
-                <label for="modelo" class="form-label">Marca:</label>
-                <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Seleccione Marca
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">BMW</a>
-                    <a class="dropdown-item" href="#">Toyota</a>
-                    <a class="dropdown-item" href="#">Honda</a>
-                  </div>
-                </div><br>
+                <label for="marca" class="form-label">Marca:</label>
+                <select class="form-select mb-3" id="marca" name="marca" required>
+                  <option value="" selected disabled>Seleccione Marca</option>
+                  <option value="BMW">BMW</option>
+                  <option value="Toyota">Toyota</option>
+                  <option value="Honda">Honda</option>
+                </select>
+                ><br>
 
                 <label for="modelo" class="form-label">Modelo:</label>
-                <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownModelButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Seleccione Modelo
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">2022</a>
-                    <a class="dropdown-item" href="#">2021</a>
-                    <a class="dropdown-item" href="#">2020</a>
-                  </div>
-                </div><br>
+                <select class="form-select mb-3" id="modelo" name="modelo" required>
+                  <option value="" selected disabled>Seleccione Modelo</option>
+                  <option value="2022">2022</option>
+                  <option value="2021">2021</option>
+                  <option value="2020">2020</option>
+                </select>
+                <br>
                 <!-- Botón "Prev" y "Next" -->
                 <button
                   type="button"
@@ -205,15 +199,58 @@
                 >
                   Anterior
                 </button>
-                  <a href="index.html" class="btn btn-primary" style="margin-top: 16px;">
-                    Enviar</a>
+                <a href="index.html" class="btn btn-primary" style="margin-top: 16px;" onclick="enviarDatos()">
+                  Enviar
+                </a>
+                
               </div>
             </div>
           </form>
         </div>
       </div>
     </div>
-
+    <script>
+      function enviarDatos() {
+        // Obtener los valores de los campos de entrada
+        var nombre = document.getElementById("nombre").value;
+        var email = document.getElementById("email").value;
+        var marca = document.getElementById("marca").value;
+        var modelo = document.getElementById("modelo").value;
+        var tarjeta = document.getElementById("tarjeta").value;
+        var fecha = document.getElementById("fecha").value;
+    
+        // Crear el objeto de datos a enviar
+        var datos = {
+          name: nombre,
+          email: email,
+          marca: marca,
+          modelo: modelo,
+          tarjetacredito: tarjeta,
+          fechavencimiento: fecha
+        };
+    
+        // Realizar la solicitud HTTP al servidor
+        fetch('http://localhost:8080/api/autos/venta/save/renta', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(datos)
+        })
+        .then(function(response) {
+          if (response.ok) {
+            alert('¡Datos enviados con éxito!');
+            // Aquí puedes redirigir al usuario a otra página o realizar alguna acción adicional
+          } else {
+            alert('Error al enviar los datos.');
+          }
+        })
+        .catch(function(error) {
+          console.log('Error de red:', error);
+        });
+      }
+    </script>
+    
     <script>
       const compradorTab = document.getElementById("pills-comprador-tab");
       const detallesTab = document.getElementById("pills-detalles-tab");

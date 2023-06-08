@@ -100,6 +100,15 @@
                   name="email"
                   required
                 />
+                <label for="phone" class="form-label">telefono:</label>
+                <input
+                  type="number"
+                  class="form-control mb-3"
+                  placeholder="813448504"
+                  id="phone"
+                  name="phone"
+                  required
+                />
                 <!-- Botón "Next" -->
                 <button
                   type="button"
@@ -118,28 +127,25 @@
               >
                 <!-- Inputs de detalles del automóvil aquí -->
                 <label for="marca" class="form-label">Marca:</label>
-                <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Seleccione Marca
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">BMW</a>
-                    <a class="dropdown-item" href="#">Toyota</a>
-                    <a class="dropdown-item" href="#">Honda</a>
-                  </div>
-                </div><br>
+                <label for="marca" class="form-label">Marca:</label>
+                <select class="form-select mb-3" id="marca" name="marca" required>
+                  <option selected disabled>Seleccione Marca</option>
+                  <option value="BMW">BMW</option>
+                  <option value="Toyota">Toyota</option>
+                  <option value="Honda">Honda</option>
+                </select>
+                <br>
 
                 <label for="modelo" class="form-label">Modelo:</label>
-                <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownModelButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Seleccione Modelo
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">2022</a>
-                    <a class="dropdown-item" href="#">2021</a>
-                    <a class="dropdown-item" href="#">2020</a>
-                  </div>
-                </div><br>
+                <label for="modelo" class="form-label">Modelo:</label>
+                <select class="form-select mb-3" id="modelo" name="modelo" required>
+                  <option selected disabled>Seleccione Modelo</option>
+                  <option value="2022">2022</option>
+                  <option value="2021">2021</option>
+                  <option value="2020">2020</option>
+                  <option value="2019">2019</option>
+                </select>
+                <br>
                 <!-- Botón "Prev" y "Submit" -->
                 <button
                   type="button"
@@ -148,7 +154,7 @@
                 >
                   Anterior
                 </button>
-                <a href="index.html" class="btn btn-primary" style="margin-top: 16px;">
+                <a href="index.html" class="btn btn-primary" onclick="enviarDatos()" style="margin-top: 16px;">
                   Enviar</a>
               </div>
             </div>
@@ -156,6 +162,46 @@
         </div>
       </div>
     </div>
+<script>
+  function enviarDatos() {
+    // Obtener los valores del formulario
+   var nombre = document.getElementById("nombre").value;
+  var email = document.getElementById("email").value;
+  var phone = document.getElementById("phone").value;
+  var marcaSelect = document.getElementById("marca");
+  var marca = marcaSelect.options[marcaSelect.selectedIndex].value;
+  var modeloSelect = document.getElementById("modelo");
+  var modelo = modeloSelect.options[modeloSelect.selectedIndex].value;
+
+    // Crear el objeto JSON con los datos
+    var data = {
+      "name": nombre,
+      "email": email,
+      "phone": phone,
+      "marca": marca,
+      "modelo": modelo
+    };
+
+    // Realizar la solicitud POST al API
+    fetch("http://localhost:8080/api/autos/save/compra", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(result => {
+      // Manejar la respuesta del API aquí
+      console.log(result);
+    })
+    .catch(error => {
+      // Manejar errores de la solicitud aquí
+      console.error("Error:", error);
+    });
+  }
+</script>
+
 
     <script>
       const compradorTab = document.getElementById("pills-comprador-tab");
